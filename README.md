@@ -39,12 +39,15 @@ the optional methods ```draw_vectors()``` and ```draw_dist()``` will draw lines 
 The main functions (outside other functions or classes) are ```collision()```, ```collision_border()```, ```calc_dist()```, ```calc_dir()``` and ```gravity()```.
 
 ```collision()``` takes a list of particles, where it will iterate through a given particle and the particle next to it, check if they are overlapping **(particles overlap when the distance between their centers is smaller than the sum of their radii)**. It will check for this condition calculating the distance in a cartesian plane and comparing it to the sum of each radius squared.
+
 $$
 d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}
 $$
+
 ##### Code 'if' statement:
 ```if (p2.x - p1.x)**2 + (p2.y - p1.y)**2 < ((p1.mass)**2 + (p2.mass)**2)```
 If the collision is confirmed, the particle's velocities are updated conform to the conservation of linear momentum ($p$) and kinetic energy ($k$) in elastic collisions, in which the velocities between 2 particles are swapped.
+
 $$
 p = mv
 $$
@@ -107,6 +110,7 @@ Then, ```calc_dir()``` receives the returned values from ```calc_dist()``` and n
 $$
 dir_x,dir_y = (\frac{dx}{d},\frac{dy}{d})
 $$
+
 Going further, we reach the main gravity motor.
 
 ```gravity()``` receives a particle list, iterating over it and 'grabbing' the first and it's next particle in the list (```p1```,```p2```), then, the function calls the previous functions inside it, storing the returned values in matching variables, and also preventing the distance from being 0, to prevent ```ZeroDivisionError```.

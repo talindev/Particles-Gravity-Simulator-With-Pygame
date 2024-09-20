@@ -1,6 +1,4 @@
 # Particles Gravity Simulator
-#### Video Demo: https://youtu.be/wws3g0yv2k8
-#### Description:
 # Context
 
 Once i was done with CS50P's lectures, it was time to finally put my hands into real work, and create a personal project, from dust.
@@ -44,31 +42,31 @@ $$
 ##### Code 'if' statement:
 ```if (p2.x - p1.x)**2 + (p2.y - p1.y)**2 < ((p1.mass)**2 + (p2.mass)**2)```
 If the collision is confirmed, the particle's velocities are updated conform to the conservation of linear momentum ($p$) and kinetic energy ($k$) in elastic collisions, in which the velocities between 2 particles are swapped.
-$
+$$
 p = mv
-$
-$
+$$
+$$
 p_{1initial} + p_{2initial} = p_{1final} + p_{2final}
-$
-$
+$$
+$$
 k = \frac{1}{2}mv^2
-$
-$
+$$
+$$
 \frac{1}{2}m_{1initial}{v_{1initial}}^2 + \frac{1}{2}m_{2initial}{v_{2initial}}^2 = \frac{1}{2}m_{1final}{v_{1final}}^2 + \frac{1}{2}m_{2final}{v_{2final}}^2
-$
+$$
 
-$
+$$
 \therefore v_{1xfinal} = \frac{(m_1 - m_2)v_{1xinitial}+2m_2v_{2xinitial}}{m_1+m_2}
-$
-$
+$$
+$$
 \therefore v_{1yfinal} = \frac{(m_1 - m_2)v_{1yinitial}+2m_2v_{2yinitial}}{m_1+m_2}
-$
-$
+$$
+$$
 \therefore v_{2xfinal} = \frac{(m_2 - m_1)v_{2xinitial}+2m_1v_{1xinitial}}{m_1+m_2}
-$
-$
+$$
+$$
 \therefore v_{2yfinal} = \frac{(m_2 - m_1)v_{2yinitial}+2m_1v_{1yinitial}}{m_1+m_2}
-$
+$$
 
 Finally, each velocity is updated with the new calculated velocities.
 
@@ -97,33 +95,33 @@ Initially, ```calc_dist()``` receives 2 particles, calculates their cartesian di
 
 Then, ```calc_dir()``` receives the returned values from ```calc_dist()``` and normalizes the vectors, returning their directions.
 
-$
+$$
 dir_x,dir_y = (\frac{dx}{d},\frac{dy}{d})
-$
+$$
 Going further, we reach the main gravity motor.
 
 ```gravity()``` receives a particle list, iterating over it and 'grabbing' the first and it's next particle in the list (```p1```,```p2```), then, the function calls the previous functions inside it, storing the returned values in matching variables, and also preventing the distance from being 0, to prevent ```ZeroDivisionError```.
 \
 Finally, the function declares a gravitational constant (```G```), with a value of $100$, and applies the masses, distances and the constant in the Newton's law of gravity, storing the gravitational force between the particles in the variable ```f```.
 
-$
+$$
 f = \frac{G\cdot (m_1\cdot m_2)}{d^2}
-$
+$$
 
 Then, the force is applied for each particle's axial velocity, increasing/decreasing the velocity by the force times the normalized direction in the refering axis, all divided by the particle's mass.
 
-$
+$$
 v_{1x} = \frac{f\cdot dir_x}{m_1}
-$
-$
+$$
+$$
 v_{1y} = \frac{f\cdot dir_y}{m_1}
-$
-$
+$$
+$$
 v_{2x} = \frac{f\cdot dir_x}{m_2}
-$
-$
+$$
+$$
 v_{2y} = \frac{f\cdot dir_y}{m_2}
-$
+$$
 
 The velocities are then updated in opposed directions.
 
@@ -140,18 +138,18 @@ The 2 functions that return statistical numbers are ```kinetic_energy()``` and `
 
 ```kinetic_energy()``` receives a single particle, and process the particle's overall velocity and mass through the kinetic energy ($k$) formula to return the particle's quantity of motion energy and return it.
 
-$
+$$
 v = \sqrt{v_x^2 + v_y^2}
-$
-$
+$$
+$$
 k = \frac{m\cdot v^2}{2}
-$
+$$
 
 ```potential_energy()``` in the other hand receives a list of particles, storing 2 particles next to each other in the list, processing their distances (cartesian distance and the distance in each axis), masses with the gravitational constant through the potential gravitational energy ($U$) to calculate the resulting energy from their gravitational interactions and return it.
 
-$
+$$
 U = \frac{-(G\cdot m_1\cdot m_2)}{d}
-$
+$$
 
 # project.py: Main Loop
 

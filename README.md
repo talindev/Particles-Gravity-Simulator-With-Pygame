@@ -45,12 +45,15 @@ If the collision is confirmed, the particle's velocities are updated conform to 
 $$
 p = mv
 $$
+
 $$
 p_{1initial} + p_{2initial} = p_{1final} + p_{2final}
 $$
+
 $$
 k = \frac{1}{2}mv^2
 $$
+
 $$
 \frac{1}{2}m_{1initial}{v_{1initial}}^2 + \frac{1}{2}m_{2initial}{v_{2initial}}^2 = \frac{1}{2}m_{1final}{v_{1final}}^2 + \frac{1}{2}m_{2final}{v_{2final}}^2
 $$
@@ -58,12 +61,15 @@ $$
 $$
 \therefore v_{1xfinal} = \frac{(m_1 - m_2)v_{1xinitial}+2m_2v_{2xinitial}}{m_1+m_2}
 $$
+
 $$
 \therefore v_{1yfinal} = \frac{(m_1 - m_2)v_{1yinitial}+2m_2v_{2yinitial}}{m_1+m_2}
 $$
+
 $$
 \therefore v_{2xfinal} = \frac{(m_2 - m_1)v_{2xinitial}+2m_1v_{1xinitial}}{m_1+m_2}
 $$
+
 $$
 \therefore v_{2yfinal} = \frac{(m_2 - m_1)v_{2yinitial}+2m_1v_{1yinitial}}{m_1+m_2}
 $$
@@ -113,12 +119,15 @@ Then, the force is applied for each particle's axial velocity, increasing/decrea
 $$
 v_{1x} = \frac{f\cdot dir_x}{m_1}
 $$
+
 $$
 v_{1y} = \frac{f\cdot dir_y}{m_1}
 $$
+
 $$
 v_{2x} = \frac{f\cdot dir_x}{m_2}
 $$
+
 $$
 v_{2y} = \frac{f\cdot dir_y}{m_2}
 $$
@@ -141,6 +150,7 @@ The 2 functions that return statistical numbers are ```kinetic_energy()``` and `
 $$
 v = \sqrt{v_x^2 + v_y^2}
 $$
+
 $$
 k = \frac{m\cdot v^2}{2}
 $$

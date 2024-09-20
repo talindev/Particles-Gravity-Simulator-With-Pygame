@@ -1,4 +1,7 @@
-# Particles Gravity Simulator
+# ⚛ Particles Gravity Simulator
+
+![README project gif](https://github.com/user-attachments/assets/521f2508-e27a-4aba-b77d-912f3fcd46ff)
+
 # Context
 
 Once i was done with CS50P's lectures, it was time to finally put my hands into real work, and create a personal project, from dust.
